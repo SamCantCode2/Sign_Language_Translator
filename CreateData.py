@@ -25,8 +25,10 @@ DIR = 'data/'+ OP + '/'
 MINVAL = 100
 
 '''
-Box Size and thresholding needs work
-Might want to change the values
+Box Size optimized
+Thresholding works
+Can use denoising AE before anything however
+Noise possible in test images for realise
 '''
 cap = cv2.VideoCapture(0)
 stop = -1
@@ -34,13 +36,16 @@ while True:
     x, frame = cap.read()
     frame = cv2.flip(frame, 1)
     count = {
-        'zero': len(os.listdir(DIR+"/0")),
-        'one': len(os.listdir(DIR+"/1")),
-        'two': len(os.listdir(DIR+"/2")),
-        'three': len(os.listdir(DIR+"/3")),
-        'four': len(os.listdir(DIR+"/4")),
-        'five': len(os.listdir(DIR+"/5")),
-        'six': len(os.listdir(DIR+"/6")),
+        '0': len(os.listdir(DIR+"/0")),
+        '1': len(os.listdir(DIR+"/1")),
+        '2': len(os.listdir(DIR+"/2")),
+        '3': len(os.listdir(DIR+"/3")),
+        '4': len(os.listdir(DIR+"/4")),
+        '5': len(os.listdir(DIR+"/5")),
+        '6': len(os.listdir(DIR+"/6")),
+        '7': len(os.listdir(DIR+"/7")),
+        '8': len(os.listdir(DIR+"/8")),
+        '9': len(os.listdir(DIR+"/9")),
         'a': len(os.listdir(DIR+"/A")),
         'b': len(os.listdir(DIR+"/B")),
         'c': len(os.listdir(DIR+"/C")),
@@ -68,12 +73,8 @@ while True:
         'y': len(os.listdir(DIR+"/Y")),
         'z': len(os.listdir(DIR+"/Z"))
         }
-    xinit = int(0.5*frame.shape[1])
-    yinit = 0
-    xfinal = frame.shape[1] - 10
-    yfinal = int(0.5*frame.shape[0])
-    cv2.rectangle(frame, (219, 9), (621, 419), (255, 0, 0), 1)
-    roi = frame[10:410, 220:520]
+    cv2.rectangle(frame, (419, 9), (721, 204), (255, 0, 0), 1)
+    roi = frame[10:205, 420:720]
     cv2.imshow("Frame", frame)
     gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
     blur = cv2.GaussianBlur(gray, (5, 5), 2)
@@ -84,5 +85,77 @@ while True:
     interrupt = cv2.waitKey(10)
     if interrupt & 0xFF == 27:
         break
+    if interrupt & 0xFF == ord('0'):
+        cv2.imwrite(DIR+'0/'+str(count['0'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('1'):
+        cv2.imwrite(DIR+'1/'+str(count['1'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('2'):
+        cv2.imwrite(DIR+'2/'+str(count['2'])+'.jpg', roi)       
+    if interrupt & 0xFF == ord('3'):
+        cv2.imwrite(DIR+'3/'+str(count['3'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('4'):
+        cv2.imwrite(DIR+'4/'+str(count['4'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('5'):
+        cv2.imwrite(DIR+'5/'+str(count['5'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('6'):
+        cv2.imwrite(DIR+'6/'+str(count['6'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('7'):
+        cv2.imwrite(DIR+'7/'+str(count['7'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('8'):
+        cv2.imwrite(DIR+'8/'+str(count['8'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('9'):
+        cv2.imwrite(DIR+'9/'+str(count['9'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('a'):
+        cv2.imwrite(DIR+'A/'+str(count['a'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('b'):
+        cv2.imwrite(DIR+'B/'+str(count['b'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('c'):
+        cv2.imwrite(DIR+'C/'+str(count['c'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('d'):
+        cv2.imwrite(DIR+'D/'+str(count['d'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('e'):
+        cv2.imwrite(DIR+'E/'+str(count['e'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('f'):
+        cv2.imwrite(DIR+'F/'+str(count['f'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('g'):
+        cv2.imwrite(DIR+'G/'+str(count['g'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('h'):
+        cv2.imwrite(DIR+'H/'+str(count['h'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('i'):
+        cv2.imwrite(DIR+'I/'+str(count['i'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('j'):
+        cv2.imwrite(DIR+'J/'+str(count['j'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('k'):
+        cv2.imwrite(DIR+'K/'+str(count['k'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('l'):
+        cv2.imwrite(DIR+'L/'+str(count['l'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('m'):
+        cv2.imwrite(DIR+'M/'+str(count['m'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('n'):
+        cv2.imwrite(DIR+'N/'+str(count['n'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('o'):
+        cv2.imwrite(DIR+'O/'+str(count['o'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('p'):
+        cv2.imwrite(DIR+'P/'+str(count['p'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('q'):
+        cv2.imwrite(DIR+'Q/'+str(count['q'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('r'):
+        cv2.imwrite(DIR+'R/'+str(count['r'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('s'):
+        cv2.imwrite(DIR+'S/'+str(count['s'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('t'):
+        cv2.imwrite(DIR+'T/'+str(count['t'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('u'):
+        cv2.imwrite(DIR+'U/'+str(count['u'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('v'):
+        cv2.imwrite(DIR+'V/'+str(count['v'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('w'):
+        cv2.imwrite(DIR+'W/'+str(count['w'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('x'):
+        cv2.imwrite(DIR+'X/'+str(count['x'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('y'):
+        cv2.imwrite(DIR+'Y/'+str(count['y'])+'.jpg', roi)
+    if interrupt & 0xFF == ord('z'):
+        cv2.imwrite(DIR+'Z/'+str(count['z'])+'.jpg', roi)
 cap.release()
 cv2.destroyAllWindows()
