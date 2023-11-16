@@ -9,7 +9,7 @@ if not os.path.exists("data/train"):
     os.makedirs("data/train")
 if not os.path.exists("data/test"):
     os.makedirs("data/test")
-for i in range(9):
+for i in range(10):
     if not os.path.exists("data/train/"+str(i)):
         os.makedirs("data/train/"+str(i))
     if not os.path.exists("data/test/"+str(i)):
@@ -24,12 +24,6 @@ OP = 'train'
 DIR = 'data/'+ OP + '/'
 MINVAL = 100
 
-'''
-Box Size optimized
-Thresholding works
-Can use denoising AE before anything however
-Noise possible in test images for realise
-'''
 cap = cv2.VideoCapture(0)
 stop = -1
 while True:
@@ -86,76 +80,76 @@ while True:
     if interrupt & 0xFF == 27:
         break
     if interrupt & 0xFF == ord('0'):
-        cv2.imwrite(DIR+'0/'+str(count['0'])+'.jpg', roi)
+        cv2.imwrite(DIR+'0/'+str(count['0'])+'.jpg', test)
     if interrupt & 0xFF == ord('1'):
-        cv2.imwrite(DIR+'1/'+str(count['1'])+'.jpg', roi)
+        cv2.imwrite(DIR+'1/'+str(count['1'])+'.jpg', test)
     if interrupt & 0xFF == ord('2'):
-        cv2.imwrite(DIR+'2/'+str(count['2'])+'.jpg', roi)       
+        cv2.imwrite(DIR+'2/'+str(count['2'])+'.jpg', test)       
     if interrupt & 0xFF == ord('3'):
-        cv2.imwrite(DIR+'3/'+str(count['3'])+'.jpg', roi)
+        cv2.imwrite(DIR+'3/'+str(count['3'])+'.jpg', test)
     if interrupt & 0xFF == ord('4'):
-        cv2.imwrite(DIR+'4/'+str(count['4'])+'.jpg', roi)
+        cv2.imwrite(DIR+'4/'+str(count['4'])+'.jpg', test)
     if interrupt & 0xFF == ord('5'):
-        cv2.imwrite(DIR+'5/'+str(count['5'])+'.jpg', roi)
+        cv2.imwrite(DIR+'5/'+str(count['5'])+'.jpg', test)
     if interrupt & 0xFF == ord('6'):
-        cv2.imwrite(DIR+'6/'+str(count['6'])+'.jpg', roi)
+        cv2.imwrite(DIR+'6/'+str(count['6'])+'.jpg', test)
     if interrupt & 0xFF == ord('7'):
-        cv2.imwrite(DIR+'7/'+str(count['7'])+'.jpg', roi)
+        cv2.imwrite(DIR+'7/'+str(count['7'])+'.jpg', test)
     if interrupt & 0xFF == ord('8'):
-        cv2.imwrite(DIR+'8/'+str(count['8'])+'.jpg', roi)
+        cv2.imwrite(DIR+'8/'+str(count['8'])+'.jpg', test)
     if interrupt & 0xFF == ord('9'):
-        cv2.imwrite(DIR+'9/'+str(count['9'])+'.jpg', roi)
+        cv2.imwrite(DIR+'9/'+str(count['9'])+'.jpg', test)
     if interrupt & 0xFF == ord('a'):
-        cv2.imwrite(DIR+'A/'+str(count['a'])+'.jpg', roi)
+        cv2.imwrite(DIR+'A/'+str(count['a'])+'.jpg', test)
     if interrupt & 0xFF == ord('b'):
-        cv2.imwrite(DIR+'B/'+str(count['b'])+'.jpg', roi)
+        cv2.imwrite(DIR+'B/'+str(count['b'])+'.jpg', test)
     if interrupt & 0xFF == ord('c'):
-        cv2.imwrite(DIR+'C/'+str(count['c'])+'.jpg', roi)
+        cv2.imwrite(DIR+'C/'+str(count['c'])+'.jpg', test)
     if interrupt & 0xFF == ord('d'):
-        cv2.imwrite(DIR+'D/'+str(count['d'])+'.jpg', roi)
+        cv2.imwrite(DIR+'D/'+str(count['d'])+'.jpg', test)
     if interrupt & 0xFF == ord('e'):
-        cv2.imwrite(DIR+'E/'+str(count['e'])+'.jpg', roi)
+        cv2.imwrite(DIR+'E/'+str(count['e'])+'.jpg', test)
     if interrupt & 0xFF == ord('f'):
-        cv2.imwrite(DIR+'F/'+str(count['f'])+'.jpg', roi)
+        cv2.imwrite(DIR+'F/'+str(count['f'])+'.jpg', test)
     if interrupt & 0xFF == ord('g'):
-        cv2.imwrite(DIR+'G/'+str(count['g'])+'.jpg', roi)
+        cv2.imwrite(DIR+'G/'+str(count['g'])+'.jpg', test)
     if interrupt & 0xFF == ord('h'):
-        cv2.imwrite(DIR+'H/'+str(count['h'])+'.jpg', roi)
+        cv2.imwrite(DIR+'H/'+str(count['h'])+'.jpg', test)
     if interrupt & 0xFF == ord('i'):
-        cv2.imwrite(DIR+'I/'+str(count['i'])+'.jpg', roi)
+        cv2.imwrite(DIR+'I/'+str(count['i'])+'.jpg', test)
     if interrupt & 0xFF == ord('j'):
-        cv2.imwrite(DIR+'J/'+str(count['j'])+'.jpg', roi)
+        cv2.imwrite(DIR+'J/'+str(count['j'])+'.jpg', test)
     if interrupt & 0xFF == ord('k'):
-        cv2.imwrite(DIR+'K/'+str(count['k'])+'.jpg', roi)
+        cv2.imwrite(DIR+'K/'+str(count['k'])+'.jpg', test)
     if interrupt & 0xFF == ord('l'):
-        cv2.imwrite(DIR+'L/'+str(count['l'])+'.jpg', roi)
+        cv2.imwrite(DIR+'L/'+str(count['l'])+'.jpg', test)
     if interrupt & 0xFF == ord('m'):
-        cv2.imwrite(DIR+'M/'+str(count['m'])+'.jpg', roi)
+        cv2.imwrite(DIR+'M/'+str(count['m'])+'.jpg', test)
     if interrupt & 0xFF == ord('n'):
-        cv2.imwrite(DIR+'N/'+str(count['n'])+'.jpg', roi)
+        cv2.imwrite(DIR+'N/'+str(count['n'])+'.jpg', test)
     if interrupt & 0xFF == ord('o'):
-        cv2.imwrite(DIR+'O/'+str(count['o'])+'.jpg', roi)
+        cv2.imwrite(DIR+'O/'+str(count['o'])+'.jpg', test)
     if interrupt & 0xFF == ord('p'):
-        cv2.imwrite(DIR+'P/'+str(count['p'])+'.jpg', roi)
+        cv2.imwrite(DIR+'P/'+str(count['p'])+'.jpg', test)
     if interrupt & 0xFF == ord('q'):
-        cv2.imwrite(DIR+'Q/'+str(count['q'])+'.jpg', roi)
+        cv2.imwrite(DIR+'Q/'+str(count['q'])+'.jpg', test)
     if interrupt & 0xFF == ord('r'):
-        cv2.imwrite(DIR+'R/'+str(count['r'])+'.jpg', roi)
+        cv2.imwrite(DIR+'R/'+str(count['r'])+'.jpg', test)
     if interrupt & 0xFF == ord('s'):
-        cv2.imwrite(DIR+'S/'+str(count['s'])+'.jpg', roi)
+        cv2.imwrite(DIR+'S/'+str(count['s'])+'.jpg', test)
     if interrupt & 0xFF == ord('t'):
-        cv2.imwrite(DIR+'T/'+str(count['t'])+'.jpg', roi)
+        cv2.imwrite(DIR+'T/'+str(count['t'])+'.jpg', test)
     if interrupt & 0xFF == ord('u'):
-        cv2.imwrite(DIR+'U/'+str(count['u'])+'.jpg', roi)
+        cv2.imwrite(DIR+'U/'+str(count['u'])+'.jpg', test)
     if interrupt & 0xFF == ord('v'):
-        cv2.imwrite(DIR+'V/'+str(count['v'])+'.jpg', roi)
+        cv2.imwrite(DIR+'V/'+str(count['v'])+'.jpg', test)
     if interrupt & 0xFF == ord('w'):
-        cv2.imwrite(DIR+'W/'+str(count['w'])+'.jpg', roi)
+        cv2.imwrite(DIR+'W/'+str(count['w'])+'.jpg', test)
     if interrupt & 0xFF == ord('x'):
-        cv2.imwrite(DIR+'X/'+str(count['x'])+'.jpg', roi)
+        cv2.imwrite(DIR+'X/'+str(count['x'])+'.jpg', test)
     if interrupt & 0xFF == ord('y'):
-        cv2.imwrite(DIR+'Y/'+str(count['y'])+'.jpg', roi)
+        cv2.imwrite(DIR+'Y/'+str(count['y'])+'.jpg', test)
     if interrupt & 0xFF == ord('z'):
-        cv2.imwrite(DIR+'Z/'+str(count['z'])+'.jpg', roi)
+        cv2.imwrite(DIR+'Z/'+str(count['z'])+'.jpg', test)
 cap.release()
 cv2.destroyAllWindows()
